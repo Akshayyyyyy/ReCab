@@ -8,10 +8,10 @@ async function createUser({ name, phone, password, user_type }) {
   return result.rows[0];
 }
 
-async function findUserById(id) {
-  const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
-  return result.rows[0];
-}
+// async function findUserById(id) {
+//   const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
+//   return result.rows[0];
+// }
 
 async function findUserByPhone(phone) {
   const result = await pool.query("SELECT * FROM users WHERE phone = $1", [
@@ -22,6 +22,6 @@ async function findUserByPhone(phone) {
 
 export default {
   createUser,
-  findUserById,
+  //findUserById,
   findUserByPhone,
 };
