@@ -1,19 +1,19 @@
-import rideModel from "../models/rideModel.js";
+import rideModel from "../models/ride.model.js";
 
 export async function postRide(req, res) {
   try {
     const user = req.user;
-    if (user.user_type !== "driver") {
+    if (user.user_type !== "driver")
       return res.status(403).json({ message: "Only drivers can post rides" });
-      const newRide = await rideModel.createRide({
-        driver_id: user.id,
-        ...req.body,
-      });
-      res.status(201).json({
-        message: "Ride posted successfully",
-        ride: newRide,
-      });
-    }
+
+    const newRide = await rideModel.createRide({
+      driver_id: user.id,
+      ...req.body,
+    });
+    res.status(201).json({
+      message: "Ride posted successfully",
+      ride: newRide,
+    });
   } catch (err) {
     res.status(500).json({
       message: "Error posting ride",
