@@ -19,7 +19,7 @@ async function createRide(rides) {
 
 async function getAllRides() {
   const result = await pool.query(
-    "SELECT * FROM rides, users.name AS driver_name, users.phone FROM rides JOIN users ON rides.driver_id = users.id ORDER BY datetime ASC"
+    "SELECT rides.* , users.name AS driver_name, users.phone FROM rides JOIN users ON rides.driver_id = users.id ORDER BY datetime ASC"
   );
   return result.rows;
 }
