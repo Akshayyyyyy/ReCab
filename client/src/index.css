@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;900&display=swap');
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;900&display=swap');
 
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: #f8fafc;
   scroll-behavior: smooth;
+  margin: 0;
+}
+
+#root {
+  padding-top: 4rem; /* Offset for fixed navbar */
+  background-color: black;
+  height: 110vh;
 }
 
 @layer utilities {

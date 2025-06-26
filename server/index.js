@@ -10,7 +10,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true,
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -18,10 +22,10 @@ app.get("/", (req, res) => {
 });
 
 // Register route
-app.post("/register", register);
+app.post("/api/auth/register", register);
 
 // Login route
-app.post("/login", login);
+app.post("/api/auth/login", login);
 
 // User creation route (for testing purposes)
 app.post("/rides", authenticateToken, postRide);
