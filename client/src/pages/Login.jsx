@@ -11,7 +11,7 @@ function Login() {
         e.preventDefault();
         localStorage.removeItem("token");
         try {
-            const response = await axios.post("http://localhost:3000/api/auth/login", { phone, password });
+            const response = await axios.post("https://recab.onrender.com/api/auth/login", { phone, password });
             if (response.data.token) {
                 localStorage.setItem("token", response.data.token);
                 navigate("/");
