@@ -14,7 +14,7 @@
 //      async function fetchRides() {
 //             try{
 //                 const token = localStorage.getItem("token");
-//                 const response = await axios.get("http://localhost:3000/rides", {
+//                 const response = await axios.get("https://recab.onrender.com/rides", {
 //                     headers: {
 //                         Authorization: `Bearer ${token}`
 //                     }
