@@ -17,7 +17,7 @@ const PostRide = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:3000/rides",
+        "https://recab.onrender.com/rides",
         {
           from_location: from,
           to_location: to,
