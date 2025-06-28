@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: "https://recab.onrender.com",
+  origin: "https://recab-front.onrender.com",
   credentials: true,
 }));
 
