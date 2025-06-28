@@ -12,7 +12,7 @@ function Register() {
   async function handleRegister(e) {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/auth/register", {
+      await axios.post("https://recab.onrender.com/api/auth/register", {
         name,
         phone,
         password,
